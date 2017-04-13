@@ -28,9 +28,8 @@ worst.mpg <- frame.dos$id[frame.dos$hwy == min(frame.dos$hwy)]
 # The vehicle that gets the most hwy miles/gallon of vehicles of that make in that year
 best.car <- function(year, make) {
   cars.in.year <- vehicles[vehicles$year == year & vehicles$make == make,]
-  return (cars.in.year$id[cars.in.year$hwy == max(cars.in.year$hwy)])
+  return (cars.in.year[cars.in.year$hwy == max(cars.in.year$hwy),])
 }
 
 # What was the most efficient honda model of 1995?
-best.car(1995, Honda)
-
+best.car(1995, 'Honda')
